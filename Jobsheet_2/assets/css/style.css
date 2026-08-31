@@ -63,3 +63,28 @@ section h2 {
     margin-bottom: .5rem;
     color: #1d5b8a;
 }
+
+main section:nth-of-type(2) div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+main section:nth-of-type(2) article {
+    text-align: center;
+    background-color: #eef4fa;
+    padding: 1.2rem;
+    border-radius: .5rem;
+}
+
+main section:nth-of-type(2) article h3 {
+    font-size: 0.95rem;
+    color: #55677a;
+    margin-bottom: 0.5rem;
+}
+
+main section:nth-of-type(2) article p {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1d5b8a;
+}
