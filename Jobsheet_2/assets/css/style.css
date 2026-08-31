@@ -88,3 +88,50 @@ main section:nth-of-type(2) article p {
     font-weight: 700;
     color: #1d5b8a;
 }
+
+/* Tabel STyling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: left;
+    padding: 0.65rem 0.75rem;
+    border-bottom: 1px solid #e2e6ea;
+}
+
+thead {
+    background-color: #1d5b8a;
+    color: #fff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f7f9fb;
+}
+
+tbody tr:hover {
+    background-color: #eef4fa;
+}
+
+tbody tr td button {
+    border: none;
+    padding: .35rem .7rem;
+    font-size: .85rem;
+    cursor: pointer;
+    border-radius: .25rem;
+}
+
+tbody tr td button:first-of-type {
+    background-color: #f0ad4e;
+    color: #fff;
+}
+
+tbody tr td button:last-of-type {
+    background-color: #d9534f;
+    color: #fff;
+}
+
+tbody tr td button:hover {
+    background-color: #6f4403;
+}
