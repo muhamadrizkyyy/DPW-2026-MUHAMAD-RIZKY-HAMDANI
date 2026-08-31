@@ -12,7 +12,7 @@ body {
 }
 
 a {
-    color: #1d5b8a;
+    color: #705493;
     text-decoration: none;
 }
 
@@ -21,7 +21,7 @@ a:hover {
 }
 
 header {
-    background-color: #1d5b8a;
+    background-color: #705493;
     color: #fff;
     padding: 1rem 1.5rem;
     display: flex;
@@ -61,7 +61,7 @@ section {
 
 section h2 {
     margin-bottom: .5rem;
-    color: #1d5b8a;
+    color: #705493;
 }
 
 main section:nth-of-type(2) div {
@@ -86,7 +86,7 @@ main section:nth-of-type(2) article h3 {
 main section:nth-of-type(2) article p {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #1d5b8a;
+    color: #705493;
 }
 
 /* Tabel STyling */
@@ -102,7 +102,7 @@ th, td {
 }
 
 thead {
-    background-color: #1d5b8a;
+    background-color: #705493;
     color: #fff;
 }
 
@@ -161,7 +161,7 @@ form select {
 form button[type="submit"] {
     padding: .75rem 1.25rem;
     border: none;
-    background-color: #1d5b8a;
+    background-color: #705493;
     color: #fff;
     cursor: pointer;
     border-radius: .25rem;
