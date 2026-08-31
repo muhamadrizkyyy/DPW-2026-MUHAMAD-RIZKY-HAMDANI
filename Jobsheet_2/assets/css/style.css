@@ -11,6 +11,15 @@ body {
     line-height: 1.5;
 }
 
+a {
+    color: #1d5b8a;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 header {
     background-color: #1d5b8a;
     color: #fff;
