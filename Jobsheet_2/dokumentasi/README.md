@@ -10,11 +10,13 @@ Jobsheet_2/
 ├── buku/                   # Direktori untuk memanajemen buku
 │   ├── list-buku.html      # Halaman yang berisi daftar seluruh buku
 │   └── tambah-buku.html    # Halaman yang berisi form untuk menambahkan buku
+├── dokumentasi/
+|   └── README.md           # Penjelasan praktikum dan modifikasi yang sudah dilakukan
 ├── member/                 # Direktori untuk memanajemen member
 │   ├── list-member.html    # Halaman yang berisi daftar seluruh member
 │   └── tambah-member.html  # Halaman yang berisi form untuk menambahkan member
 ├── index.html              # Halaman utama
-└── README.md               
+└── README.md               # Penjelasan singkat terkait jobsheet
 ```
 
 ### 1. 📁 Penambahan File CSS
