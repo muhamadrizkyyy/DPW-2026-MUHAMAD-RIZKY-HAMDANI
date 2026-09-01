@@ -3,18 +3,6 @@
 > **Sub-CPMK:** Menyusun struktur halaman web dengan HTML5 semantic.
 
 ---
-
-## 👨‍🎓 Identitas Mahasiswa
-
-| Informasi        | Detail                |
-| :--------------- | :-------------------- |
-| 👤 **Nama**      | Muhamad Rizky Hamdani |
-| 🆔 **NIM**       | 254107020xxx          |
-| 🏫 **Kelas**     | TI-2F                 |
-| 🔢 **No. Absen** | 22                    |
-
-
-
 ## 🎯 Deskripsi
 
 **Jobsheet 1** berfokus pada pembuatan kerangka web SIMPUS Mini. Mulai dari :

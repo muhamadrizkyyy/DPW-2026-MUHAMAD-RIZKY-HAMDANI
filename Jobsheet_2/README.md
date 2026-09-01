@@ -1,18 +1,5 @@
 # 📘 Jobsheet 2 — CSS3 Styling Dasar
-
 > **Sub-CPMK:** Mengimplementasikan styling dasar menggunakan CSS3 pada halaman web.
-
----
-
-## 👨‍🎓 Identitas Mahasiswa
-
-| Informasi        | Detail                |
-| :--------------- | :-------------------- |
-| 👤 **Nama**      | Muhamad Rizky Hamdani |
-| 🆔 **NIM**       | 254107020xxx          |
-| 🏫 **Kelas**     | TI-2F                 |
-| 🔢 **No. Absen** | 22                    |
-
 ---
 
 ## 🎯 Deskripsi
