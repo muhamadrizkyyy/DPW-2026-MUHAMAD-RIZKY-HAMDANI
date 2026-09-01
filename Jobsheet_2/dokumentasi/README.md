@@ -138,3 +138,12 @@ tbody tr td button:nth-of-type(2) {
 ```
 
 untuk memberi style pada button tersebut, saya menggunakan selector css :nth-of-type(2) yang berarti button yang kedua pada tag td.
+
+---
+## 🎓 Kesimpulan
+
+Pada **Jobsheet 2 — CSS3 Styling Dasar**, dilakukan pengembangan tampilan website dengan menerapkan konsep dasar **CSS3**. Beberapa konsep yang digunakan meliputi **Box Model, Flexbox, dan CSS Grid**.
+
+Struktur HTML dari Jobsheet 1 tetap dipertahankan sehingga perubahan hanya berfokus pada **tampilan visual dan tata letak halaman**.
+
+Dengan penerapan CSS3, website menjadi lebih **terstruktur, rapi, menarik, dan nyaman untuk digunakan**. 🚀
