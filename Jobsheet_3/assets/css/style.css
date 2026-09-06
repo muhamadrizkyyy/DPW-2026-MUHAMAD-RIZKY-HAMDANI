@@ -208,6 +208,15 @@ footer {
     font-size: 0.9rem;
 }
 
+/* MEDIA QUERY BREAKPOINTS */
+
+/* Media Query : 768 px (Tablet) */
+@media (max-width: 768px) {
+    main section:nth-of-type(2) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 /* Media Query : 480 px (HP) */
 @media (max-width: 480px) {
     header {
@@ -236,6 +245,10 @@ footer {
     header nav ul {
         flex-direction: column;
         gap: 1rem;
+    }
+
+    main section:nth-of-type(2) {
+        grid-template-columns: 1fr;
     }
     
 }
