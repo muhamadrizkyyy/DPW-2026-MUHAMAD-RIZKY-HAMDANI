@@ -115,6 +115,10 @@ table {
     border-collapse: collapse;
 }
 
+.table-responsive {
+    overflow-x: auto;
+}
+
 th, td {
     text-align: left;
     padding: 0.65rem 0.75rem;
