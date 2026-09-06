@@ -30,6 +30,18 @@ header {
     flex-wrap: wrap;
 }
 
+/* Hamburger Button */
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: none;
+    font-size: 1.6rem;
+    color: #fff;
+    cursor: pointer;
+}
+
 header h1 {
     font-size: 1.4rem;
 }
@@ -190,4 +202,36 @@ footer {
     padding: 1.25rem;
     color: #7a8794;
     font-size: 0.9rem;
+}
+
+/* Media Query : 480 px (HP) */
+@media (max-width: 480px) {
+    header {
+        position: relative;
+    }
+
+    header h2 {
+        display: none;
+    }
+
+    .nav-toggle-label {
+        display: block;
+    }
+
+    header nav {
+        display: none;
+        width: 100%;
+        order: 3;
+        margin-top: 1rem;
+    }
+
+    .nav-toggle:checked ~ nav {
+        display: block;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
 }
