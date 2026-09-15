@@ -75,7 +75,36 @@ function initValidasiForm() {
             hapusError(judul);
         }
 
-        // ...(pengecekan pengarang, tahun, stok dengan pola serupa)...
+        const pengarang = form.querySelector("[name='pengarang'], [name='nama']");
+        if (pengarang && pengarang.value.trim() === "") {
+            tampilkanError(pengarang, "Field ini wajib diisi.");
+            valid = false;
+        } else if (pengarang) {
+            hapusError(pengarang);
+        }
+        const isbn = form.querySelector("[name='isbn'], [name='nama']");
+        if (isbn && isbn.value.trim() === "") {
+            tampilkanError(isbn, "Field ini wajib diisi.");
+            valid = false;
+        } else if (isbn) {
+            hapusError(isbn);
+        }
+
+        const tahun = form.querySelector("[name='tahun'], [name='nama']");
+        if (tahun && tahun.value.trim() === "") {
+            tampilkanError(tahun, "Field ini wajib diisi.");
+            valid = false;
+        } else if (tahun) {
+            hapusError(tahun);
+        }
+
+        const stok = form.querySelector("[name='stok'], [name='nama']");
+        if (stok && stok.value.trim() === "") {
+            tampilkanError(stok, "Field ini wajib diisi.");
+            valid = false;
+        } else if (stok) {
+            hapusError(stok);
+        }
 
         if (!valid) {
             e.preventDefault();
