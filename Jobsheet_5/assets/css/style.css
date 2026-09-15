@@ -256,14 +256,20 @@ footer {
   }
 
   header nav {
-    display: none;
+    visibility: hidden;
+    overflow: hidden;
+    max-height: 0;
     width: 100%;
     order: 3;
     margin-top: 1rem;
+    transition: all 0.4s ease-in;
+    transform: translateX(-20%);
   }
-
+  
   header nav.nav-open {
-    display: block;
+    visibility: visible;
+    max-height: 100%;
+    transform: translateX(0%);
   }
 
   header nav ul {
