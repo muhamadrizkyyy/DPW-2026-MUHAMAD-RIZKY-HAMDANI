@@ -26,6 +26,13 @@
     <main>
         <h2>Daftar Member</h2>
         <p>List member terdaftar pada Sistem Perpustakaan ini.</p>
+        <div class="search-box">
+            <form action="">
+                <label for="search-input">Cari Member</label>
+                <input type="text" id="search-input" placeholder="Ketik judul buku...">
+            </form>
+        </div>
+        <p id="loading-indicator" style="display:none;">Memuat data...</p>
         <div class="table-responsive">
             <table>
                 <thead>
@@ -45,7 +52,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 SIMPUS-Mini &mdash; Jobsheet 1</p>
+        <p>&copy; 2026 SIMPUS-Mini &mdash; Jobsheet 6</p>
     </footer>
     <script src="./../assets/js/app.js"></script>
 </body>
