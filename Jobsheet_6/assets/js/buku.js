@@ -1,8 +1,18 @@
-document.addEventListener("DOMContentLoaded", muatBuku);
+const refreshButton = document.querySelector(".refresh-btn");
+document.addEventListener("DOMContentLoaded", function () {
+  muatBuku();
+  refreshButton.addEventListener("click", function () {
+    muatBuku();
+  })
+});
+
+
+
 
 async function muatBuku() {
     const tbody = document.querySelector(".table-responsive tbody")
     const loading = document.getElementById("loading-indicator")
+    
 
     if (!tbody) {
         return
@@ -10,6 +20,7 @@ async function muatBuku() {
 
     loading.style.display = "block";
     tbody.innerHTML = "";
+    refreshButton.style.display = "none";
 
     try {
         await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -37,5 +48,6 @@ async function muatBuku() {
             "<tr><td colspan=\"5\">Gagal memuat data: " + error.message + "</td></tr>";
     } finally {
         loading.style.display = "none";
+        refreshButton.style.display = "block";
     }
 }
