@@ -23,7 +23,7 @@ async function muatBuku() {
     refreshButton.style.display = "none";
 
     try {
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+        await new Promise((resolve) => setTimeout(resolve, 3000));
 
         const buku = await fetch("./../data/buku.json");
         if (!buku.ok) {
