@@ -107,6 +107,20 @@ main section:nth-of-type(2) article p {
   color: #705493;
 }
 
+.refresh-btn {
+  padding: .5rem 1rem;
+  margin-bottom: 1rem;
+  background: #705493;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: all 200ms ease-in-out ;
+}
+
+.refresh-btn:hover {
+  background: #164869;
+}
+
 /* Tabel STyling */
 table {
   width: 100%;
