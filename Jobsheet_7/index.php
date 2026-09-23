@@ -1,6 +1,6 @@
 <?php
 $page_title = "HOME";
-include __DIR__ . 'include/header.php';
+include __DIR__ . '/includes/header.php';
 ?>
 <section>
     <h2>Selamat Datang di Sistem Perpustakaan Mini</h2>
@@ -27,5 +27,5 @@ include __DIR__ . 'include/header.php';
     </article>
 </section>
 <?php
-include __DIR__ . 'include/footer.php';
+include __DIR__ . '/includes/footer.php';
 ?>
