@@ -8,15 +8,15 @@ $daftarBuku = $_SESSION['member'] ?? [];
 ?>
 <h2>Daftar Member</h2>
 <p>List member terdaftar pada Sistem Perpustakaan ini.</p>
-<?php if ($flash): ?>
-    <p class="flash flash-<?php echo $flash['type']; ?>"><?php echo $flash['pesan']; ?></p>
-<?php endif; ?>
 <div class="search-box">
     <form action="">
         <label for="search-input">Cari Member</label>
         <input type="text" id="search-input" placeholder="Ketik judul buku...">
     </form>
 </div>
+<?php if ($flash): ?>
+    <p class="flash flash-<?php echo $flash['type']; ?>"><?php echo $flash['pesan']; ?></p>
+<?php endif; ?>
 <div class="table-responsive">
     <table>
         <thead>
@@ -45,8 +45,8 @@ $daftarBuku = $_SESSION['member'] ?? [];
                         <td><?= $member['nohp'] ?></td>
                         <td><?= $member['tgl_join'] ?></td>
                         <td>
-                            <a href="edit-member.php?id=<?= $member['id'] ?>">Edit</a>
-                            <a href="hapus-member.php?id=<?= $member['id'] ?>">Hapus</a>
+                            <a href="" class="btn-edit">Edit</a>
+                            <a href="" class="btn-hapus">Hapus</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
