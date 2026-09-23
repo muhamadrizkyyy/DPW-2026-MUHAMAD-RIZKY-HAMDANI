@@ -29,8 +29,8 @@ if (!empty($errors)) {
 }
 
 $stmt = $pdo->prepare(
-    "INSER INTO buku (judul, pengarang, tahun, isbn, stok, kategori_id) 
-    VALUES (:judul, :pengarang, :tahun, :isbn, :stok, :kategori_id)
+    "INSERT INTO buku (judul, pengarang, tahun, isbn, stok, kategori) 
+    VALUES (:judul, :pengarang, :tahun, :isbn, :stok, :kategori)
     RETURNING id"
 );
 
@@ -40,7 +40,7 @@ $stmt->execute([
     'tahun' => $tahun,
     'isbn' => $isbn,
     'stok' => $stok,
-    'kategori_id' => $kategori,
+    'kategori' => $kategori,
 ]);
 
 
