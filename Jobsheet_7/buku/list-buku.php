@@ -1,63 +1,61 @@
-<!DOCTYPE html>
-<html lang="id">
+<?php
+$page_title = "List Buku";
+include __DIR__ . '/../includes/header.php';
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>LIBRARY | Home</title>
-    <link rel="stylesheet" href="./../assets/css/style.css">
-</head>
-
-<body>
-    <header>
-        <h1>SIMPUS-Mini</h1>
-        <button type="button" id="nav-toggle-btn" class="nav-toggle-label" aria-label="Menu">&#9776;</button>
-        <nav>
-            <ul>
-                <li><a href="./../index.html">Beranda</a></li>
-                <li><a href="./list-buku.html">Daftar Buku</a></li>
-                <li><a href="./tambah-buku.html">Tambah Buku</a></li>
-                <li><a href="./../member/list-member.html">Daftar Member</a></li>
-                <li><a href="./../member/tambah-member.html">Tambah Member</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <h2>Daftar Buku</h2>
-        <p>List buku terdaftar pada Sistem Perpustakaan ini.</p>
-        <div class="search-box">
-            <form action="">
-                <label for="search-input">Cari Judul Buku</label>
-                <input type="text" id="search-input" placeholder="Ketik judul buku...">
-            </form>
-        </div>
-        <p id="loading-indicator" style="display:none;">Memuat data...</p>
-        <button class="refresh-btn" style="display: none;">&#128472;</button>
-        <div class="table-responsive">
-            <table>
-                <thead>
+$flash = $_SESSION['flash'] ?? null;
+unset($_SESSION['flash']);
+$daftarBuku = $_SESSION['buku'] ?? [];
+?>
+<h2>Daftar Buku</h2>
+<p>List buku terdaftar pada Sistem Perpustakaan ini.</p>
+<div class="search-box">
+    <form action="">
+        <label for="search-input">Cari Judul Buku</label>
+        <input type="text" id="search-input" placeholder="Ketik judul buku...">
+    </form>
+</div>
+<?php if ($flash): ?>
+    <p class="flash flash-<?php echo $flash['type']; ?>"><?php echo $flash['pesan']; ?></p>
+<?php endif; ?>
+<button class="refresh-btn" style="display: none;">&#128472;</button>
+<div class="table-responsive">
+    <table>
+        <thead>
+            <tr>
+                <th>ISBN</th>
+                <th>Judul</th>
+                <th>Pengarang</th>
+                <th>Tahun</th>
+                <th>Stok</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php if(empty($daftarBuku)) : ?>
+                <tr>
+                    <td colspan="5">Tidak ada buku yang terdaftar</td>
+                </tr>
+            <?php else : ?>
+                <?php foreach ($daftarBuku as $buku) : ?>
                     <tr>
-                        <th>Judul</th>
-                        <th>Pengarang</th>
-                        <th>Tahun</th>
-                        <th>Stok</th>
-                        <th>Aksi</th>
+                        <td>
+                            <?php if(empty($buku['isbn'])) : ?>
+                                <span class="empty">-</span>
+                            <?php else : ?>
+                                <?php echo $buku['isbn']; ?>
+                            <?php endif; ?>
+                        </td>
+                        <td><?php echo $buku['judul']; ?></td>
+                        <td><?php echo $buku['pengarang']; ?></td>
+                        <td><?php echo $buku['tahun']; ?></td>
+                        <td><?php echo $buku['stok']; ?></td>
+                        <td><a href="">Edit</a> | <a href="">Hapus</a></td>
                     </tr>
-                </thead>
-                <tbody>
-                    <!-- ... 4 baris lain dengan pola yang sama ... -->
-                </tbody>
-            </table>
-        </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 SIMPUS-Mini &mdash; Jobsheet 1</p>
-    </footer>
-
-    <script src="./../assets/js/app.js"></script>
-    <script src="./../assets/js/buku.js"></script>
-</body>
-
-</html>
+                <?php endforeach; ?>
+            <?php endif; ?>
+        </tbody>
+    </table>
+</div>
+<?php
+include __DIR__ . '/../includes/footer.php';
+?>
