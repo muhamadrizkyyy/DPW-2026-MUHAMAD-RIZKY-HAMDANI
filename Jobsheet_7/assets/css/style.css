@@ -246,6 +246,21 @@ footer {
     margin-top: 0.25rem;
 }
 
+/* ===== flash style ===== */
+.flash {
+  padding: 1rem 1.5rem;
+}
+
+.flash-success {
+  background-color: #dff0d8;
+  color: #3c763d;
+}
+
+.flash-error {
+  background-color: #f2dede;
+  color: #a94442;
+}
+
 /* MEDIA QUERY BREAKPOINTS */
 
 /* Media Query : 768 px (Tablet) */
