@@ -1,63 +1,36 @@
-<!DOCTYPE html>
-<html lang="id">
+<?php
+$page_title = "Form Tambah Member";
+include __DIR__ . '/../includes/header.php';
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>LIBRARY | Home</title>
-    <link rel="stylesheet" href="./../assets/css/style.css">
-</head>
-
-<body>
-    <header>
-        <h1>SIMPUS-Mini</h1>
-        <button type="button" id="nav-toggle-btn" class="nav-toggle-label" aria-label="Menu">&#9776;</button>
-        <nav>
-            <ul>
-                <li><a href="./../index.html">Beranda</a></li>
-                <li><a href="./../buku/list-buku.html">Daftar Buku</a></li>
-                <li><a href="./../buku/tambah-buku.html">Tambah Buku</a></li>
-                <li><a href="./list-member.html">Daftar Member</a></li>
-                <li><a href="./tambah-member.html">Tambah Member</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <h2>Tambah Member</h2>
-        <p>Form untuk menambah daftar member..</p>
-        <form id="form-tambah">
-            <p>
-                <label for="nama">Nama</label><br>
-                <input type="text" id="nama" name="nama" required>
-            </p>
-            <p>
-                <label for="email">Email</label><br>
-                <input type="email" id="email" name="email" required>
-            </p>
-            <p>
-                <label for="no_anggota">No. Anggota</label><br>
-                <input type="text" id="no_anggota" name="no_anggota" required>
-            </p>
-            <p>
-                <label for="alamat">Alamat</label><br>
-                <input type="text" id="alamat" name="alamat">
-            </p>
-            <p>
-                <label for="no_hp">No. HP</label><br>
-                <input type="text" id="no_hp" name="no_hp">
-            </p>
-            <p>
-                <button type="submit">Simpan</button>
-            </p>
-        </form>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 SIMPUS-Mini &mdash; Jobsheet 1</p>
-    </footer>
-
-    <script src="./../assets/js/app.js"></script>
-</body>
-
-</html>
+$flash = $_SESSION['flash'] ?? null;
+unset($_SESSION['flash']);
+?>
+<?php if ($flash): ?>
+    <p class="flash flash-<?php echo $flash['type']; ?>"><?php echo $flash['pesan']; ?></p>
+<?php endif; ?>
+<h2>Tambah Member</h2>
+<p>Form untuk menambah daftar member..</p>
+<form id="form-tambah" method="post" action="proses-tambah.php">
+    <p>
+        <label for="nama">Nama</label><br>
+        <input type="text" id="nama" name="nama" required>
+    </p>
+    <p>
+        <label for="email">Email</label><br>
+        <input type="email" id="email" name="email" required>
+    </p>
+    <p>
+        <label for="alamat">Alamat</label><br>
+        <input type="text" id="alamat" name="alamat">
+    </p>
+    <p>
+        <label for="nohp">No. HP</label><br>
+        <input type="text" id="nohp" name="nohp">
+    </p>
+    <p>
+        <button type="submit">Simpan</button>
+    </p>
+</form>
+<?php
+include __DIR__ . '/../includes/footer.php';
+?>
