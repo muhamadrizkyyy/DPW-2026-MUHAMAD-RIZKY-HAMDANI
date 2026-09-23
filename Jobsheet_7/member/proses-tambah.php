@@ -4,10 +4,11 @@ session_start();
 $nama = trim($_POST['nama']);
 $email = trim($_POST['email']);
 
-$no_anggota = "MEM-" + rand(1000, 9999) + date("dmY");
+$no_anggota = "MEM-" . rand(1000, 9999) . date("dmY");
 
 $alamat = trim($_POST['alamat']);
-$nohp = trim($_POST['judul']);
+$nohp = trim($_POST['nohp']);
+$tgl_join = date("d-m-Y");
 
 $errors = [];
 if ($nama === '') {
@@ -27,7 +28,7 @@ if ($nohp === '') {
 
 if (!empty($errors)) {
     $_SESSION['flash'] = ['type' => 'error', 'pesan' => implode(' ', $errors)];
-    header('Location: tambah.php');
+    header('Location: tambah-member.php');
     exit;
 }
 
@@ -41,9 +42,10 @@ $_SESSION['member'][] = [
     'no_anggota' => $no_anggota,
     'alamat' => $alamat,
     'nohp' => $nohp,
+    'tgl_join' => $tgl_join,
 ];
 
 $_SESSION['flash'] = ['type' => 'success', 'pesan' => 'Buku berhasil ditambahkan.'];
-header('Location: list.php');
+header('Location: list-member.php');
 exit;
 ?>
