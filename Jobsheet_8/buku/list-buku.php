@@ -1,10 +1,11 @@
 <?php
+require __DIR__ .'/../includes/koneksi.php';
 $page_title = "List Buku";
 include __DIR__ . '/../includes/header.php';
 
 $flash = $_SESSION['flash'] ?? null;
 unset($_SESSION['flash']);
-$daftarBuku = $_SESSION['buku'] ?? [];
+$daftarBuku = $pdo->query('SELECT * FROM buku')->fetchAll(PDO::FETCH_ASSOC) ?? [];
 ?>
 <h2>Daftar Buku</h2>
 <p>List buku terdaftar pada Sistem Perpustakaan ini.</p>
