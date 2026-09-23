@@ -1,4 +1,5 @@
 <?php 
+require __DIR__ .'/../includes/koneksi.php';
 session_start();
 
 $judul = trim($_POST['judul']);
@@ -27,20 +28,22 @@ if (!empty($errors)) {
     exit;
 }
 
-if (!isset($_SESSION['buku'])) {
-    $_SESSION['buku'] = [];
-}
+$stmt = $pdo->prepare(
+    "INSER INTO buku (judul, pengarang, tahun, isbn, stok, kategori_id) 
+    VALUES (:judul, :pengarang, :tahun, :isbn, :stok, :kategori_id)
+    RETURNING id"
+);
 
-$_SESSION['buku'][] = [
+$stmt->execute([
     'judul' => $judul,
-    'isbn' => $isbn,
     'pengarang' => $pengarang,
     'tahun' => $tahun,
+    'isbn' => $isbn,
     'stok' => $stok,
-    'kategori' => $kategori,
-];
+    'kategori_id' => $kategori,
+]);
 
-$_SESSION['flash'] = ['type' => 'success', 'pesan' => 'Buku berhasil ditambahkan.'];
+
 header('Location: list-buku.php');
 exit;
 ?>
