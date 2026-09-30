@@ -74,7 +74,7 @@ $totalPages = max(1, (int) ceil($totalRows / $perPage));
                         <td><?php echo $buku['pengarang']; ?></td>
                         <td><?php echo $buku['tahun']; ?></td>
                         <td><?php echo $buku['stok']; ?></td>
-                        <td><button class="btn-edit"><a style="color: white;" href="edit-buku.php?id=<?php echo $buku['id'] ?>">Edit</a></button> |
+                        <td><a style="color: white;" href="edit-buku.php?id=<?php echo $buku['id'] ?>" class="btn-edit">Edit</a> |
                             <form class="form-hapus" method="post" action="proses-hapus.php">
                                 <input type="hidden" name="id" value="<?php echo $buku['id']; ?>">
                                 <button type="submit" class="btn-hapus">Hapus</button>
@@ -87,7 +87,7 @@ $totalPages = max(1, (int) ceil($totalRows / $perPage));
     </table>
     <nav class="pagination">
         <?php for ($i = 1; $i <= $totalPages; $i++): ?>
-            <a href="list.php?page=<?php echo $i; ?><?php echo $keyword !== '' ? '&q=' . urlencode($keyword) : ''; ?>"
+            <a href="list-buku.php?page=<?php echo $i; ?><?php echo $keyword !== '' ? '&q=' . urlencode($keyword) : ''; ?>"
                 class="<?php echo $i === $page ? 'active' : ''; ?>"><?php echo $i; ?></a>
         <?php endfor; ?>
     </nav>
