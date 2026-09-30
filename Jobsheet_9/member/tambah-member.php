@@ -16,10 +16,6 @@ unset($_SESSION['flash']);
         <input type="text" id="nama" name="nama" required>
     </p>
     <p>
-        <label for="email">Email</label><br>
-        <input type="email" id="email" name="email" required>
-    </p>
-    <p>
         <label for="alamat">Alamat</label><br>
         <input type="text" id="alamat" name="alamat">
     </p>

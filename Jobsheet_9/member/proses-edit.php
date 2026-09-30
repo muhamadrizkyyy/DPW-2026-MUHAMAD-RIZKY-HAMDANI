@@ -4,7 +4,7 @@ session_start();
 
 $nama = trim($_POST['nama']);
 
-$no_anggota = "MEM-" . rand(1000, 9999) . date("dmY");
+$no_anggota = trim($_POST['no_anggota']);
 
 $alamat = trim($_POST['alamat']);
 $nohp = trim($_POST['nohp']);
@@ -26,20 +26,17 @@ if (!empty($errors)) {
     exit;
 }
 
-if (!isset($_SESSION['member'])) {
-    $_SESSION['member'] = [];
-}
-
-$stmt = $pdo->prepare("INSERT INTO anggota (nama, no_anggota, alamat, no_hp) VALUES (:nama, :no_anggota, :alamat, :nohp)");
-
+$stmt = $pdo->prepare(
+    "UPDATE anggota SET nama = :nama, alamat = :alamat, no_hp = :nohp, no_anggota = :no_anggota WHERE id = :id"
+);
 $stmt->execute([
-    'nama' => $nama,
-    'no_anggota' => $no_anggota,
-    'alamat' => $alamat,
-    'nohp' => $nohp,
-]); 
+    ':nama' => $nama,
+    ':alamat' => $alamat,
+    ':nohp' => $nohp,
+    ':no_anggota' => $no_anggota,
+    ':id' => $_POST['id']
+]);
 
-$_SESSION['flash'] = ['type' => 'success', 'pesan' => 'Member berhasil ditambahkan.'];
+$_SESSION['flash'] = ['type' => 'success', 'pesan' => "Data anggota berhasil diubah."];
 header('Location: list-member.php');
 exit;
-?>
