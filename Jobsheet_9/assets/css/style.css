@@ -131,6 +131,26 @@ table {
   overflow-x: auto;
 }
 
+td button:first-of-type,
+td a.btn-edit {
+    background-color: #f0ad4e;
+    color: #fff;
+}
+
+td a.btn-edit {
+    display: inline-block;
+    padding: 0.35rem 0.7rem;
+    margin-right: 0.35rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+td form.form-hapus {
+    display: inline;
+}
+
+
+
 th,
 td {
   text-align: left;
@@ -176,6 +196,25 @@ tbody tr td button:last-of-type {
 
 tbody tr td button:hover {
   background-color: #6f4403;
+}
+
+.pagination {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.pagination a {
+    padding: 0.4rem 0.75rem;
+    border: 1px solid #cdd4da;
+    border-radius: 4px;
+    color: #705493;
+}
+
+.pagination a.active {
+    background-color: #705493;
+    color: #fff;
+    border-color: #705493;
 }
 
 /* Form Styling */
