@@ -1,10 +1,11 @@
-<?php 
+<?php
 session_start();
 
 $__jobsheetRoot = dirname(__DIR__); // root directory
 $__scriptDir = dirname($_SERVER['SCRIPT_FILENAME']);
 $__rel = ltrim(str_replace('\\', '/', substr($__scriptDir, strlen($__jobsheetRoot))), '/');
 $base = $__rel === '' ? '' : str_repeat('../', substr_count($__rel, '/') + 1);
+$sudahLogin = isset($_SESSION['user_id']);
 ?>
 
 <!DOCTYPE html>
@@ -28,6 +29,14 @@ $base = $__rel === '' ? '' : str_repeat('../', substr_count($__rel, '/') + 1);
                 <li><a href="<?= $base ?>buku/tambah-buku.php">Tambah Buku</a></li>
                 <li><a href="<?= $base ?>member/list-member.php">Daftar Member</a></li>
                 <li><a href="<?= $base ?>member/tambah-member.php">Tambah Member</a></li>
+                <div class="auth-status">
+                    <?php if ($sudahLogin): ?>
+                        <span><?php echo $_SESSION['nama']; ?></span>
+                        <a href="<?php echo $base; ?>auth/logout.php">Logout</a>
+                    <?php else: ?>
+                        <a href="<?php echo $base; ?>auth/login.php">Login</a>
+                    <?php endif; ?>
+                </div>
             </ul>
         </nav>
     </header>
