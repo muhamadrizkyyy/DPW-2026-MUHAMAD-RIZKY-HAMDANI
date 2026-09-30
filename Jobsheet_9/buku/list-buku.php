@@ -50,7 +50,7 @@ $daftarBuku = $pdo->query('SELECT * FROM buku')->fetchAll(PDO::FETCH_ASSOC) ?? [
                         <td><?php echo $buku['pengarang']; ?></td>
                         <td><?php echo $buku['tahun']; ?></td>
                         <td><?php echo $buku['stok']; ?></td>
-                        <td><a href="">Edit</a> | <a href="">Hapus</a></td>
+                        <td><a href="edit-buku.php?id=<?php echo $buku['id']?>">Edit</a> | <a href="">Hapus</a></td>
                     </tr>
                 <?php endforeach; ?>
             <?php endif; ?>
