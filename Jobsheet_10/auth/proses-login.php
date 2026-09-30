@@ -1,4 +1,6 @@
 <?php
+session_start();
+require __DIR__ .'/../includes/koneksi.php';
 $email = trim($_POST['email'] ?? '');
 $password = $_POST['password'] ?? '';
 

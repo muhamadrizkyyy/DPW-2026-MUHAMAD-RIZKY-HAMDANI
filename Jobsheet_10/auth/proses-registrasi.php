@@ -1,4 +1,6 @@
 <?php 
+session_start();
+require __DIR__ . '/../includes/koneksi.php';
 $nama = trim($_POST['nama']);
 $email = trim($_POST['email']);
 $konfirmasi_password = trim($_POST['Conpassword']);
@@ -9,7 +11,7 @@ if ($nama === '') {
     $errors[] = "Nama wajib diisi.";
 }
 if ($email === '') {
-    $errors[] = "Username wajib diisi.";
+    $errors[] = "Email wajib diisi.";
 }
 if ($password !== $konfirmasi_password) {
     $errors[] = "Password tidak sama.";
@@ -18,11 +20,11 @@ if (strlen($password) < 6) {
     $errors[] = "Password minimal 6 karakter.";
 }
 
-$cek = $pdo->prepare("SELECT id FROM user WHERE email = :email");
+$cek = $pdo->prepare("SELECT * FROM users WHERE email = :email");
 $cek->execute(['email' => $email]);
 if ($cek->fetch()) {
     $_SESSION['flash'] = ['type' => 'error', 'pesan' => 'Email sudah digunakan.'];
-    header('Location: register.php');
+    header('Location: registrasi.php');
     exit;
 }
 
@@ -34,4 +36,8 @@ $stmt->execute([
     'email' => $email,
     'password' => password_hash($password, PASSWORD_DEFAULT),
 ]);
+
+$_SESSION['flash'] = ['type' => 'success', 'pesan' => "Data anggota berhasil tersimpan."];
+header('Location: login.php');
+exit;
 ?>
