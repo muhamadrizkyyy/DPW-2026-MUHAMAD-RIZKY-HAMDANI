@@ -1,5 +1,5 @@
 <?php
-require __DIR__ .'/../includes/koneksi.php';
+require __DIR__ . '/../includes/koneksi.php';
 $page_title = "List Buku";
 include __DIR__ . '/../includes/header.php';
 
@@ -32,7 +32,7 @@ $daftarBuku = $pdo->query('SELECT * FROM buku')->fetchAll(PDO::FETCH_ASSOC) ?? [
             </tr>
         </thead>
         <tbody>
-            <?php if(empty($daftarBuku)) : ?>
+            <?php if (empty($daftarBuku)) : ?>
                 <tr>
                     <td colspan="5">Tidak ada buku yang terdaftar</td>
                 </tr>
@@ -40,7 +40,7 @@ $daftarBuku = $pdo->query('SELECT * FROM buku')->fetchAll(PDO::FETCH_ASSOC) ?? [
                 <?php foreach ($daftarBuku as $buku) : ?>
                     <tr>
                         <td>
-                            <?php if(empty($buku['isbn'])) : ?>
+                            <?php if (empty($buku['isbn'])) : ?>
                                 <span class="empty">-</span>
                             <?php else : ?>
                                 <?php echo $buku['isbn']; ?>
@@ -50,7 +50,12 @@ $daftarBuku = $pdo->query('SELECT * FROM buku')->fetchAll(PDO::FETCH_ASSOC) ?? [
                         <td><?php echo $buku['pengarang']; ?></td>
                         <td><?php echo $buku['tahun']; ?></td>
                         <td><?php echo $buku['stok']; ?></td>
-                        <td><a href="edit-buku.php?id=<?php echo $buku['id']?>">Edit</a> | <a href="">Hapus</a></td>
+                        <td><button class="btn-edit"><a style="color: white;" href="edit-buku.php?id=<?php echo $buku['id'] ?>">Edit</a></button> |
+                            <form class="form-hapus" method="post" action="proses-hapus.php">
+                                <input type="hidden" name="id" value="<?php echo $buku['id']; ?>">
+                                <button type="submit" class="btn-hapus">Hapus</button>
+                            </form>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             <?php endif; ?>
