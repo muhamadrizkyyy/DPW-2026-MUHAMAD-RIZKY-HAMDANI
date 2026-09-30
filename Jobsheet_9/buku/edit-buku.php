@@ -46,9 +46,9 @@ $buku = $stmt->fetch(PDO::FETCH_ASSOC);
     <p>
         <label for="kategori">Kategori</label><br>
         <select id="kategori" name="kategori">
-            <option value="fiksi" <?= $buku['kategori'] == 'fiksi' ?? 'selected' ?>>Fiksi</option>
-            <option value="non-fiksi" <?= $buku['kategori'] == 'non-fiksi' ?? 'selected' ?>>Non-Fiksi</option>
-            <option value="referensi" <?= $buku['kategori'] == 'referensi' ?? 'selected' ?>>Referensi</option>
+            <option value="fiksi" <?= $buku['kategori'] == 'fiksi' ? 'selected' : ''?>>Fiksi</option>
+            <option value="non-fiksi" <?= $buku['kategori'] == 'non-fiksi' ? 'selected' : '' ?>>Non-Fiksi</option>
+            <option value="referensi" <?= $buku['kategori'] == 'referensi' ? 'selected' : '' ?>>Referensi</option>
         </select>
     </p>
     <p>
