@@ -1,6 +1,6 @@
-# 📘 Jobsheet 11 — Integrasi Modul Peminjaman
+# 📘 Jobsheet 11 — Keamanan Web Dasar
 
-> **Sub-CPMK:** Mengintegrasikan front-end dan back-end proyek secara utuh.
+> **Sub-CPMK:** Menerapkan prinsip keamanan web dasar.
 
 ---
 
@@ -10,15 +10,13 @@
 
 Pada jobsheet ini, website dikembangkan agar memiliki tampilan yang **responsif dan dapat menyesuaikan ukuran layar**, baik pada perangkat desktop maupun perangkat mobile.
 
-## Perubahan dari Jobsheet 10
-
-- Tambah `sql/03_peminjaman.sql` — tabel `peminjaman` (relasi ke `buku` dan `anggota`), melengkapi ERD yang sudah dirancang di Jobsheet 8.
-- Tambah modul **Peminjaman** (menghubungkan seluruh entitas yang sudah dibangun sejak Jobsheet 8-10 sekaligus):
-  - `peminjaman/tambah.php` + `proses_tambah.php`: pilih anggota + buku (dropdown hanya `stok > 0`), simpan transaksi **dan** kurangi stok buku dalam satu **transaction** (`beginTransaction`/`commit`/`rollBack`) dengan `SELECT ... FOR UPDATE` untuk mencegah race condition stok.
-  - `peminjaman/kembali.php` + `proses_kembali.php`: daftar transaksi aktif (`status = 'dipinjam'`), tombol Kembalikan menambah kembali stok buku dalam transaction serupa.
-  - `peminjaman/riwayat.php`: histori peminjaman per anggota (JOIN `peminjaman` + `buku`).
-- `includes/header.php`: navbar menambahkan menu Peminjaman Baru, Pengembalian, Riwayat (hanya saat login).
-- `index.php`: kartu "Sedang Dipinjam" kini `COUNT(*) FROM peminjaman WHERE status = 'dipinjam'` (sebelumnya statis `0`).
+## Perubahan dari Jobsheet 11
+- Tambah `includes/helpers.php` (`e()` untuk `htmlspecialchars`) dan `includes/csrf.php` (`csrf_token()`, `csrf_field()`, `csrf_verify()`), keduanya di-`require_once` dari `includes/header.php`.
+- **XSS**: seluruh output data dari database/`$_GET` (judul, pengarang, nama, alamat, no_hp, nilai pencarian, nama petugas di navbar) dibungkus `e()`.
+- **CSRF**: token tersembunyi ditambahkan ke semua form POST (Tambah/Edit/Hapus Buku & Anggota, Login, Register); setiap `proses_*.php` dan `hapus.php` memanggil `csrf_verify()` sebelum menyentuh database.
+- **Session fixation**: `session_regenerate_id(true)` dipanggil di `auth/proses_login.php` setelah login berhasil.
+- **SQL Injection**: diaudit ulang (tidak ada perubahan kode — sejak Jobsheet 8 semua query sudah prepared statement).
+- Tambah `docs/security-checklist.md` — dokumen audit lengkap dengan bukti before/after per kerentanan.
 
 ## 🚀 Cara Menjalankan
 
@@ -34,8 +32,4 @@ php -S localhost:8000
 
 ## 🎓 Kesimpulan
 
-Pada **Jobsheet 4 — UI/UX Design**, dilakukan perancangan awal UI/UX aplikasi melalui **wireframe dan user flow**.
-
-Tidak terdapat perubahan pada kode HTML maupun CSS dari Jobsheet 3. Fokus utama jobsheet ini adalah membuat rancangan untuk fitur-fitur yang **belum dibangun**, yaitu **Login, Dashboard Petugas, Peminjaman, Pengembalian, dan Riwayat**.
-
-Rancangan tersebut menjadi dasar atau acuan untuk tahap pengembangan fitur aplikasi pada jobsheet berikutnya. 🚀
+Pada **Jobsheet 11 — Keamanan Web Dasar**

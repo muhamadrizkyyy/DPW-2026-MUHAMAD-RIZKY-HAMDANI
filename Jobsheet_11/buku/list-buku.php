@@ -1,6 +1,7 @@
 <?php
-require __DIR__ . '/../includes/koneksi.php';
 $page_title = "List Buku";
+require __DIR__ . '/../includes/koneksi.php';
+include __DIR__ . '/../includes/helpers.php';
 include __DIR__ . '/../includes/header.php';
 
 $flash = $_SESSION['flash'] ?? null;
@@ -70,10 +71,10 @@ $totalPages = max(1, (int) ceil($totalRows / $perPage));
                                 <?php echo $buku['isbn']; ?>
                             <?php endif; ?>
                         </td>
-                        <td><?php echo $buku['judul']; ?></td>
-                        <td><?php echo $buku['pengarang']; ?></td>
-                        <td><?php echo $buku['tahun']; ?></td>
-                        <td><?php echo $buku['stok']; ?></td>
+                        <td><?php echo e($buku['judul']) ?></td>
+                        <td><?php echo e($buku['pengarang']) ?></td>
+                        <td><?php echo e($buku['tahun']) ?></td>
+                        <td><?php echo e($buku['stok']) ?></td>
                         <td><a style="color: white;" href="edit-buku.php?id=<?php echo $buku['id'] ?>" class="btn-edit">Edit</a> |
                             <form class="form-hapus" method="post" action="proses-hapus.php">
                                 <input type="hidden" name="id" value="<?php echo $buku['id']; ?>">
