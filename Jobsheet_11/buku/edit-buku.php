@@ -24,7 +24,7 @@ $buku = $stmt->fetch(PDO::FETCH_ASSOC);
 <p>Form untuk mengubah data buku.</p>
 <form id="form-tambah" method="post" action="proses-edit.php">
     <?php csrf_field(); ?>
-    <input type="hidden" name="id" value="<?= $buku['id'] ?>">
+    <input type="hidden" name="id" value="<?= (int) $buku['id'] ?>">
     <p>
         <label for="judul">Judul</label><br>
         <input type="text" id="judul" name="judul" value="<?= $buku['judul'] ?>">
