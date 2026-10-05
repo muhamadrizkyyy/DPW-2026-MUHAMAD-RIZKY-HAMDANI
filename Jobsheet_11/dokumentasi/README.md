@@ -1,86 +1,39 @@
-# Penjelasan Dokumentasi Project
+# 📘 Jobsheet 11 — Keamanan Web Dasar & Desain Responsif
 
-### 📁 Struktur Folder
+> **Sub-CPMK:** Menerapkan prinsip keamanan web dasar dan pengoptimalan antarmuka web responsif.
+
+---
+
+## 🎯 Deskripsi
+
+**Jobsheet 11** berfokus pada dua aspek utama dalam pengembangan web SIMPUS-Mini:
+1. **Keamanan Web Dasar (Security Hardening):** Menerapkan proteksi terhadap kerentanan XSS (*Cross-Site Scripting*), CSRF (*Cross-Site Request Forgery*), *Session Fixation*, dan audit *SQL Injection*.
+2. **Responsive Design:** Memastikan tampilan website dapat menyesuaikan ukuran layar secara optimal, baik pada perangkat desktop, tablet, maupun mobile.
+
+---
+
+## 📁 Struktur Folder
 
 ```text
-Jobsheet_4/
-├── assets/                 # Direktori untuk menyimpan assets seperti css
-│   └── css/                # Direktori untuk menyimpan khusus stylesheets
-│       └── style.css       # File CSS untuk styling 
-├── buku/                   # Direktori untuk memanajemen buku
-│   ├── list-buku.html      # Halaman yang berisi daftar seluruh buku
-│   └── tambah-buku.html    # Halaman yang berisi form untuk menambahkan buku
+Jobsheet_11/
+├── assets/                 # Direktori untuk menyimpan assets seperti CSS & JavaScript
+│   └── css/                # Direktori khusus stylesheets
+│       └── style.css       # File CSS utama untuk styling dan media query
+├── buku/                   # Direktori manajemen data buku
+│   ├── list-buku.php       # Halaman daftar seluruh buku
+│   └── tambah-buku.php     # Halaman form tambah data buku
+├── docs/                   # Dokumentasi proyek & audit keamanan
+│   ├── security-checklist.md # Dokumen audit keamanan lengkap (before/after)
+│   └── wireframe.md        # Desain wireframe tampilan & User Flow SIMPUS-Mini
 ├── dokumentasi/
-|   └── README.md           # Penjelasan praktikum dan modifikasi yang sudah dilakukan
-├── docs/
-|   └── wireframe.md        # Desain wireframe tampilan dan User Flow SIMPUS-Mini
-├── member/                 # Direktori untuk memanajemen member
-│   ├── list-member.html    # Halaman yang berisi daftar seluruh member
-│   └── tambah-member.html  # Halaman yang berisi form untuk menambahkan member
-├── index.html              # Halaman utama
-└── README.md               # Penjelasan singkat terkait jobsheet
-```
-
-### 1. 🍔 Penambahan Elemen Hamburger pada Navbar
-
-Menambahkan elemen **hamburger menu** pada navbar untuk mendukung tampilan navigasi pada perangkat dengan ukuran layar yang lebih kecil.
-
----
-
-### 2. 📊 Penambahan `div class="table-responsive"`
-
-Menambahkan `div` dengan class **`table-responsive`** pada bagian tabel.
-
-```html
-<div class="table-responsive">
-    <table>
-        ...
-    </table>
-</div>
-```
-
-Penambahan ini bertujuan agar tabel tetap dapat ditampilkan dengan baik pada layar yang lebih kecil.
-
----
-
-### 3. 📱 Penerapan Media Query
-
-Menambahkan **Media Query** pada `style.css` untuk mengatur tampilan website berdasarkan ukuran layar.
-
-Media Query diterapkan pada:
-
-* 🍔 **Ham-nav**
-* 📊 **Table-responsive**
-* 🗂️ **Grid card pada `index.html`**
-
-Contoh:
-
-```css
-@media (max-width: 768px) {
-    /* Styling untuk perangkat dengan layar kecil */
-}
-```
-
----
-
-### 4. 📱 Penambahan Meta Viewport
-
-Menambahkan **meta viewport** pada bagian `<head>` setiap halaman HTML.
-
-```html
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-```
-
-Meta viewport digunakan agar tampilan website dapat menyesuaikan **lebar layar perangkat**.
-
----
-## 📋 Ringkasan Perubahan
-
-| Komponen | Penerapan |
-| :--- | :--- |
-| 🍔 **Ham Nav** | Penambahan hamburger navigation untuk tampilan mobile |
-| 📊 **Table Responsive** | Membuat tabel dapat menyesuaikan pada layar kecil |
-| 📱 **Media Query** | Mengatur tampilan ham-nav, table-responsive, dan grid card berdasarkan ukuran layar |
-| 🗂️ **Grid Card** | Menyesuaikan tata letak card pada `index.html` |
-| 🔗 **Meta Viewport** | Menyesuaikan lebar halaman dengan ukuran layar perangkat |
-| 🧱 **HTML** | Penambahan elemen pendukung responsive design tanpa mengubah struktur utama |
+│   └── README.md           # Penjelasan praktikum dan modifikasi yang sudah dilakukan
+├── includes/               # Helper fungsi keamanan & autentikasi
+│   ├── auth.php            # Verifikasi autentikasi & hak akses session
+│   ├── csrf.php            # Helper csrf_token(), csrf_field(), & csrf_verify()
+│   ├── header.php          # Header global halaman & pembungkus include helper
+│   └── helpers.php         # Helper fungsi e() untuk mencegah XSS (htmlspecialchars)
+├── member/                 # Direktori manajemen data member / anggota
+│   ├── list-member.php     # Halaman daftar seluruh member
+│   └── tambah-member.php   # Halaman form tambah data member
+├── index.php               # Halaman utama / dashboard
+└── README.md               # Penjelasan ringkas terkait Jobsheet 11
