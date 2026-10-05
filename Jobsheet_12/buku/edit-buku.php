@@ -1,5 +1,7 @@
 <?php
 $page_title = "Edit Buku";
+include __DIR__ . '/../includes/auth.php';
+require __DIR__ .'/../includes/csrf.php';
 require __DIR__ .'/../includes/koneksi.php';
 include __DIR__ . '/../includes/header.php';
 
@@ -22,7 +24,8 @@ $buku = $stmt->fetch(PDO::FETCH_ASSOC);
 <h2><?= $page_title ?></h2>
 <p>Form untuk mengubah data buku.</p>
 <form id="form-tambah" method="post" action="proses-edit.php">
-    <input type="hidden" name="id" value="<?= $buku['id'] ?>">
+    <?php csrf_field(); ?>
+    <input type="hidden" name="id" value="<?= (int) $buku['id'] ?>">
     <p>
         <label for="judul">Judul</label><br>
         <input type="text" id="judul" name="judul" value="<?= $buku['judul'] ?>">

@@ -1,5 +1,6 @@
 <?php
 $page_title = "List Member";
+include __DIR__ . '/../includes/auth.php';
 include __DIR__ . '/../includes/header.php';
 require __DIR__ . '/../includes/koneksi.php';
 
@@ -60,10 +61,10 @@ $totalPages = max(1, (int) ceil($totalRows / $perPage));
             <?php else : ?>
                 <?php foreach ($daftarmember as $member) : ?>
                     <tr>
-                        <td><?= $member['no_anggota'] ?></td>
-                        <td><?= $member['nama'] ?></td>
-                        <td><?= $member['alamat'] ?></td>
-                        <td><?= $member['no_hp'] ?></td>
+                        <td><?= e($member['no_anggota']) ?></td>
+                        <td><?= e($member['nama']) ?></td>
+                        <td><?= e($member['alamat']) ?></td>
+                        <td><?= e($member['no_hp']) ?></td>
                         <td>
                             <a href="edit-member.php?id=<?php echo $member['id']?>" class="btn-edit">Edit</a>
                             <form class="form-hapus" method="post" action="proses-hapus.php">

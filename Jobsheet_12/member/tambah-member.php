@@ -1,5 +1,6 @@
 <?php
 $page_title = "Form Tambah Member";
+include __DIR__ . '/../includes/auth.php';
 include __DIR__ . '/../includes/header.php';
 
 $flash = $_SESSION['flash'] ?? null;

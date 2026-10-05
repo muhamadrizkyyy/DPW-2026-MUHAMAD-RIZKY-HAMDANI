@@ -1,5 +1,9 @@
 <?php
 require __DIR__ . '/../includes/koneksi.php';
+require __DIR__ . '/../includes/csrf.php';
+
+csrf_verify();
+
 session_start();
 
 $nama = trim($_POST['nama']);

@@ -1,4 +1,7 @@
 <?php 
+include __DIR__ . '/../includes/auth.php';
+require __DIR__ .'/../includes/csrf.php';
+csrf_verify();
 require __DIR__ .'/../includes/koneksi.php';
 session_start();
 
