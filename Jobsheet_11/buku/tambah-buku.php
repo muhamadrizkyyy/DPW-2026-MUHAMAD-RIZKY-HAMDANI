@@ -1,5 +1,6 @@
 <?php
 $page_title = "Tambah Buku";
+include __DIR__ . '/../includes/csrf.php';
 include __DIR__ . '/../includes/header.php';
 
 $flash = $_SESSION['flash'] ?? null;
@@ -11,6 +12,7 @@ unset($_SESSION['flash']);
 <h2>Tambah Buku</h2>
 <p>Form untuk menambah daftar buku.</p>
 <form id="form-tambah" method="post" action="proses-tambah.php">
+    <?php csrf_field() ?>
     <p>
         <label for="judul">Judul</label><br>
         <input type="text" id="judul" name="judul">
