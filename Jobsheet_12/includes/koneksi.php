@@ -1,23 +1,19 @@
 <?php
-// Ambil URL database otomatis dari Railway
-$db_url = getenv('DATABASE_URL');
+// Ambil DATABASE_URL dari $_ENV, $_SERVER, atau getenv()
+$db_url = $_ENV['DATABASE_URL'] ?? $_SERVER['DATABASE_URL'] ?? getenv('DATABASE_URL');
 
-if ($db_url) {
-    // Memecah format postgres://user:pass@host:port/dbname
-    $db = parse_url($db_url);
-    $host   = $db['host'];
-    $port   = $db['port'] ?? 5432;
-    $user   = $db['user'];
-    $pass   = $db['pass'];
-    $dbname = ltrim($db['path'], '/');
-} else {
-    // Konfigurasi cadangan (jika dijalankan di laptop lokal)
-    $host   = 'localhost';
-    $port   = '5432';
-    $user   = 'postgres';
-    $pass   = 'root';
-    $dbname = 'railway';
+// Jika variabel tidak ditemukan, tampilkan pesan spesifik alih-alih fallback ke localhost
+if (!$db_url) {
+    die("Koneksi gagal: Variabel DATABASE_URL belum terdeteksi oleh PHP di Railway.");
 }
+
+$db = parse_url($db_url);
+
+$host   = $db['host'];
+$port   = $db['port'] ?? 5432;
+$user   = $db['user'];
+$pass   = $db['pass'];
+$dbname = ltrim($db['path'], '/');
 
 try {
     $dsn = "pgsql:host=$host;port=$port;dbname=$dbname";
