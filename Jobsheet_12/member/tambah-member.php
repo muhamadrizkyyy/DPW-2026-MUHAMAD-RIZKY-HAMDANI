@@ -1,6 +1,7 @@
 <?php
 $page_title = "Form Tambah Member";
 include __DIR__ . '/../includes/auth.php';
+include __DIR__ . '/../includes/csrf.php';
 include __DIR__ . '/../includes/header.php';
 
 $flash = $_SESSION['flash'] ?? null;
@@ -12,6 +13,7 @@ unset($_SESSION['flash']);
 <h2>Tambah Member</h2>
 <p>Form untuk menambah daftar member..</p>
 <form id="form-tambah" method="post" action="proses-tambah.php">
+    <?= csrf_field(); ?>
     <p>
         <label for="nama">Nama</label><br>
         <input type="text" id="nama" name="nama" required>

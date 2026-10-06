@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 $__jobsheetRoot = dirname(__DIR__); // root directory
 $__scriptDir = dirname($_SERVER['SCRIPT_FILENAME']);
@@ -29,6 +31,7 @@ $sudahLogin = isset($_SESSION['user_id']);
                 <li><a href="<?= $base ?>buku/tambah-buku.php">Tambah Buku</a></li>
                 <li><a href="<?= $base ?>member/list-member.php">Daftar Member</a></li>
                 <li><a href="<?= $base ?>member/tambah-member.php">Tambah Member</a></li>
+                <li><a href="<?= $base ?>peminjaman/list-peminjaman.php">Daftar Peminjaman</a></li>
                 <div class="auth-status">
                     <?php if ($sudahLogin): ?>
                         <span><?php echo $_SESSION['nama']; ?></span>

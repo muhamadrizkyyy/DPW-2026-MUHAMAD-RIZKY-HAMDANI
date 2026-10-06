@@ -108,13 +108,13 @@ main section:nth-of-type(2) article p {
 }
 
 .refresh-btn {
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   margin-bottom: 1rem;
   background: #705493;
   border: none;
   color: #fff;
   cursor: pointer;
-  transition: all 200ms ease-in-out ;
+  transition: all 200ms ease-in-out;
 }
 
 .refresh-btn:hover {
@@ -133,23 +133,21 @@ table {
 
 td button:first-of-type,
 td a.btn-edit {
-    background-color: #f0ad4e;
-    color: #fff;
+  background-color: #f0ad4e;
+  color: #fff;
 }
 
 td a.btn-edit {
-    display: inline-block;
-    padding: 0.35rem 0.7rem;
-    margin-right: 0.35rem;
-    border-radius: 4px;
-    font-size: 0.85rem;
+  display: inline-block;
+  padding: 0.35rem 0.7rem;
+  margin-right: 0.35rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
 }
 
 td form.form-hapus {
-    display: inline;
+  display: inline;
 }
-
-
 
 th,
 td {
@@ -199,22 +197,22 @@ tbody tr td button:hover {
 }
 
 .pagination {
-    display: flex;
-    gap: 0.5rem;
-    margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
 }
 
 .pagination a {
-    padding: 0.4rem 0.75rem;
-    border: 1px solid #cdd4da;
-    border-radius: 4px;
-    color: #705493;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid #cdd4da;
+  border-radius: 4px;
+  color: #705493;
 }
 
 .pagination a.active {
-    background-color: #705493;
-    color: #fff;
-    border-color: #705493;
+  background-color: #705493;
+  color: #fff;
+  border-color: #705493;
 }
 
 /* Form Styling */
@@ -279,10 +277,10 @@ footer {
 
 /* ===== Pesan Error Validasi ===== */
 .error {
-    display: block;
-    color: #d9534f;
-    font-size: 0.85rem;
-    margin-top: 0.25rem;
+  display: block;
+  color: #d9534f;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
 }
 
 /* ===== flash style ===== */
@@ -298,6 +296,28 @@ footer {
 .flash-error {
   background-color: #f2dede;
   color: #a94442;
+}
+
+.btn-primary {
+  background: #705493;
+  color: white;
+  padding: .5rem 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.btn-primary:hover {
+  background: #35214e;
+}
+
+.rounded {
+  border-radius: .4rem;
+}
+
+.btn:hover {
+  text-decoration: none;
 }
 
 /* MEDIA QUERY BREAKPOINTS */
@@ -333,7 +353,7 @@ footer {
     transition: all 0.4s ease-in;
     transform: translateX(-20%);
   }
-  
+
   header nav.nav-open {
     visibility: visible;
     max-height: 100%;
