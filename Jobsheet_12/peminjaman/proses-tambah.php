@@ -1,9 +1,9 @@
 <?php
 include __DIR__ . '/../includes/auth.php';
 require __DIR__ . '/../includes/csrf.php';
-csrf_verify();
 require __DIR__ . '/../includes/koneksi.php';
 session_start();
+csrf_verify();
 
 $anggotaId = $_POST['anggota_id'] ?? '';
 $bukuId = $_POST['buku_id'] ?? '';
@@ -37,5 +37,5 @@ try {
 }
 
 
-header('Location: index.php');
+header('Location: list-peminjaman.php');
 exit;
