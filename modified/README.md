@@ -1,6 +1,4 @@
-# 📘 Jobsheet 4 — UI/UX Design
-
-> **Sub-CPMK:** Merancang UI/UX aplikasi (proyek).
+# 📘 Modified Dtyle
 
 ---
 
@@ -9,10 +7,6 @@
 **Jobsheet 3** berfokus pada penerapan **Responsive Design** untuk mengembangkan tampilan website dari Jobsheet 2.
 
 Pada jobsheet ini, website dikembangkan agar memiliki tampilan yang **responsif dan dapat menyesuaikan ukuran layar**, baik pada perangkat desktop maupun perangkat mobile.
-
-## Perubahan dari Jobsheet 3
-- Tidak ada perubahan kode — halaman HTML/CSS tetap sama persis dengan Jobsheet 3.
-- Tambah `docs/wireframe.md`: wireframe teks + user flow untuk fitur yang **belum dibangun** (Login, Dashboard Petugas, Peminjaman, Pengembalian, Riwayat).
 
 ## 🚀 Cara Menjalankan
 

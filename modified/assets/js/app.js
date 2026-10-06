@@ -2,6 +2,7 @@ initNavToggle();
 initTableFilter();
 initValidasiForm();
 initHapusConfirm();
+initNavSticky();
 
 // Hamburger Nav
 function initNavToggle() {
@@ -13,6 +14,21 @@ function initNavToggle() {
   toggleBtn.addEventListener("click", () => {
     nav.classList.toggle("nav-open");
   });
+}
+
+function initNavSticky() {
+    const nav = document.querySelector("header");
+    if (!nav) {
+        return;
+    }
+
+    document.addEventListener("scroll", function() {
+        if (window.scrollY > 0) {
+            nav.classList.add("nav-sticky");
+        } else {
+            nav.classList.remove("nav-sticky");
+        }
+    })
 }
 
 // ===== Konfirmasi hapus (front-end only, belum ke server) =====
