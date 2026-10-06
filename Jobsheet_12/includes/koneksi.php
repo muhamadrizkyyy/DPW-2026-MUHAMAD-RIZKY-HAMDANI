@@ -1,7 +1,7 @@
 <?php
-$host = "localhost";
-$port = "5432";
-$db   = "simpus_mini";
+$host = "ballast.proxy.rlwy.net";
+$port = "29374";
+$db   = "railway";
 $user = "postgres";
 $pass = "root";
 
