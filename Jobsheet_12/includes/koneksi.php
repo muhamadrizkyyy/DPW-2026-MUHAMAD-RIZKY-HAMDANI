@@ -1,12 +1,27 @@
 <?php
-$host = getenv('PGHOST') ?: 'ballast.proxy.rlwy.net';
-$port = getenv('PGPORT') ?: '29374';
-$db   = getenv('PGDATABASE') ?: 'railway';
-$user = getenv('PGUSER') ?: 'postgres';
-$pass = getenv('PGPASSWORD') ?: 'root';
+// Ambil URL database otomatis dari Railway
+$db_url = getenv('DATABASE_URL');
+
+if ($db_url) {
+    // Memecah format postgres://user:pass@host:port/dbname
+    $db = parse_url($db_url);
+    $host   = $db['host'];
+    $port   = $db['port'] ?? 5432;
+    $user   = $db['user'];
+    $pass   = $db['pass'];
+    $dbname = ltrim($db['path'], '/');
+} else {
+    // Konfigurasi cadangan (jika dijalankan di laptop lokal)
+    $host   = 'localhost';
+    $port   = '5432';
+    $user   = 'postgres';
+    $pass   = 'root';
+    $dbname = 'railway';
+}
 
 try {
-    $pdo = new PDO("pgsql:host=$host;port=$port;dbname=$db", $user, $pass, [
+    $dsn = "pgsql:host=$host;port=$port;dbname=$dbname";
+    $pdo = new PDO($dsn, $user, $pass, [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
     ]);
     echo "Koneksi database berhasil!";
