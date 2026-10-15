@@ -1,6 +1,6 @@
-document.addEventListener("DOMContentLoaded", muatMember);
+document.addEventListener("DOMContentLoaded", muatpeminjaman);
 
-async function muatMember() {
+async function muatpeminjaman() {
     const tbody = document.querySelector(".table-responsive tbody")
     const loading = document.getElementById("loading-indicator")
 
@@ -14,18 +14,21 @@ async function muatMember() {
     try {
         await new Promise((resolve) => setTimeout(resolve, 1000));
 
-        const member = await fetch("./../data/member.json");
-        if (!member.ok) {
-            throw new Error("Gagal mengambil data (status " + member.status + ")")
+        const peminjaman = await fetch("./../data/peminjaman.json");
+        if (!peminjaman.ok) {
+            throw new Error("Gagal mengambil data (status " + peminjaman.status + ")")
         }
-        const datamember = await member.json();
-        datamember.forEach(function (member) {
+        const datapeminjaman = await peminjaman.json();
+        datapeminjaman.forEach(function (peminjaman) {
             const tr = document.createElement("tr");
             tr.innerHTML =
-                "<td>" + member.no_anggota + "</td>" +
-                "<td>" + member.nama + "</td>" +
-                "<td>" + member.alamat + "</td>" +
-                "<td>" + member.no_hp + "</td>" +
+                "<td>" + peminjaman.no_peminjaman + "</td>" +
+                "<td>" + peminjaman.nama_peminjaman + "</td>" +
+                "<td>" + peminjaman.asal + "</td>" +
+                "<td>" + peminjaman.no_hp + "</td>" +
+                "<td>" + peminjaman.tanggal_pinjam + "</td>" +
+                "<td>" + peminjaman.tanggal_kembali + "</td>" +
+                "<td>" + peminjaman.status + "</td>" +
                 "<td>" +
                 "<button type=\"button\">Edit</button> " +
                 "<button type=\"button\" class=\"btn-hapus\">Hapus</button>" +

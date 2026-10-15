@@ -1,15 +1,14 @@
 const refreshButton = document.querySelector(".refresh-btn");
 document.addEventListener("DOMContentLoaded", function () {
-  muatBuku();
+  muatinventaris();
   refreshButton.addEventListener("click", function () {
-    muatBuku();
+    muatinventaris();
   })
 });
 
 
 
-
-async function muatBuku() {
+async function muatinventaris() {
     const tbody = document.querySelector(".table-responsive tbody")
     const loading = document.getElementById("loading-indicator")
     
@@ -25,18 +24,18 @@ async function muatBuku() {
     try {
         await new Promise((resolve) => setTimeout(resolve, 3000));
 
-        const buku = await fetch("./../data/buku.json");
-        if (!buku.ok) {
-            throw new Error("Gagal mengambil data (status " + buku.status + ")")
+        const inventaris = await fetch("./../data/inventaris.json");
+        if (!inventaris.ok) {
+            throw new Error("Gagal mengambil data (status " + inventaris.status + ")")
         }
-        const dataBuku = await buku.json();
-        dataBuku.forEach(function (buku) {
+        const datainventaris = await inventaris.json();
+        var i = 1;
+        datainventaris.forEach(function (inventaris) {
             const tr = document.createElement("tr");
             tr.innerHTML =
-                "<td>" + buku.judul + "</td>" +
-                "<td>" + buku.pengarang + "</td>" +
-                "<td>" + buku.tahun + "</td>" +
-                "<td>" + buku.stok + "</td>" +
+                "<td>" + i++ + "</td>" +
+                "<td>" + inventaris.nama_alat + "</td>" +
+                "<td>" + inventaris.status + "</td>" +
                 "<td>" +
                 "<button type=\"button\">Edit</button> " +
                 "<button type=\"button\" class=\"btn-hapus\">Hapus</button>" +

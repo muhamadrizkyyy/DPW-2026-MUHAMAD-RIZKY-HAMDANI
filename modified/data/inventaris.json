@@ -1,0 +1,52 @@
+[
+  {
+    "nama_alat": "Speaker Portable",
+    "jumlah": 2,
+    "status": "Tersedia"
+  },
+  {
+    "nama_alat": "Kabel Roll 15M",
+    "jumlah": 5,
+    "status": "Tersedia"
+  },
+  {
+    "nama_alat": "Mic Wireless",
+    "jumlah": 4,
+    "status": "Dipinjam"
+  },
+  {
+    "nama_alat": "Proyektor",
+    "jumlah": 1,
+    "status": "Tersedia"
+  },
+  {
+    "nama_alat": "Layar Proyektor",
+    "jumlah": 1,
+    "status": "Rusak"
+  },
+  {
+    "nama_alat": "Handy Talkie",
+    "jumlah": 8,
+    "status": "Dipinjam"
+  },
+  {
+    "nama_alat": "Megafon",
+    "jumlah": 2,
+    "status": "Tersedia"
+  },
+  {
+    "nama_alat": "Stand Banner",
+    "jumlah": 3,
+    "status": "Tersedia"
+  },
+  {
+    "nama_alat": "Tenda Lipat 3x3",
+    "jumlah": 2,
+    "status": "Perbaikan"
+  },
+  {
+    "nama_alat": "Meja Lipat",
+    "jumlah": 6,
+    "status": "Tersedia"
+  }
+]

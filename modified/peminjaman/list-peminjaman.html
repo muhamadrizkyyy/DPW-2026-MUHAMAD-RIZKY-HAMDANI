@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PERKAPKOE | Peminjaman</title>
+    <link rel="stylesheet" href="./../assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>PERKAPKOE</h1>
+        <button type="button" id="nav-toggle-btn" class="nav-toggle-label" aria-label="Menu">&#9776;</button>
+        <nav>
+            <ul>
+                <li><a href="./../index.html">Home</a></li>
+                <li><a href="./../inventaris/list-inventaris.html">Daftar inventaris</a></li>
+                <li><a href="./list-peminjaman.html">Ajukan Peminjaman</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Daftar Peminjaman</h2>
+        <p>List Peminjaman yang telah diajukan.</p>
+        <div class="search-box">
+            <div class="btn-group" style="display: flex; align-self: self-end;">
+                <a href="./tambah.html" class="btn">Ajukan Peminjaman</a>
+                <button class="refresh-btn" style="display: none;">&#128472;</button>
+            </div>
+            <form action="">
+                <label for="search-input">Cari Nomor Peminjaman</label>
+                <input type="text" id="search-input" placeholder="Ketik nomor peminjaman...">
+            </form>
+        </div>
+        <section>
+            <p id="loading-indicator" style="display:none;">Memuat data...</p>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No. Peminjaman</th>
+                            <th>Nama Peminjaman</th>
+                            <th>Asal</th>
+                            <th>No. HP</th>
+                            <th>Tanggal Pinjam</th>
+                            <th>Tanggal Kembali</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 PERKAPKOE &mdash; 2026</p>
+    </footer>
+    <script src="./../assets/js/app.js"></script>
+    <script src="./../assets/js/peminjaman.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+[
+  {
+    "no_peminjaman": "PMJ-202610-001",
+    "nama_peminjaman": "Budi Santoso",
+    "asal": "UKM Kesenian",
+    "no_hp": "081234567890",
+    "tanggal_pinjam": "2026-10-10",
+    "tanggal_kembali": "2026-10-12",
+    "status": "Selesai"
+  },
+  {
+    "no_peminjaman": "PMJ-202610-002",
+    "nama_peminjaman": "Siti Rahma",
+    "asal": "Himpunan Mahasiswa Informatika",
+    "no_hp": "082198765432",
+    "tanggal_pinjam": "2026-10-12",
+    "tanggal_kembali": "2026-10-15",
+    "status": "Dipinjam"
+  },
+  {
+    "no_peminjaman": "PMJ-202610-003",
+    "nama_peminjaman": "Ahmad Rizky",
+    "asal": "BEM Fakultas Teknik",
+    "no_hp": "085712341234",
+    "tanggal_pinjam": "2026-10-14",
+    "tanggal_kembali": "2026-10-16",
+    "status": "Dipinjam"
+  },
+  {
+    "no_peminjaman": "PMJ-202610-004",
+    "nama_peminjaman": "Dewi Lestari",
+    "asal": "UKM Olahraga",
+    "no_hp": "081388889999",
+    "tanggal_pinjam": "2026-10-15",
+    "tanggal_kembali": "2026-10-18",
+    "status": "Pending"
+  },
+  {
+    "no_peminjaman": "PMJ-202610-005",
+    "nama_peminjaman": "Fajar Ramadhan",
+    "asal": "UKM Pramuka",
+    "no_hp": "087811223344",
+    "tanggal_pinjam": "2026-10-08",
+    "tanggal_kembali": "2026-10-11",
+    "status": "Terlambat"
+  }
+]

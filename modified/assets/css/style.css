@@ -8,6 +8,24 @@
   --primary-color: #0f99ea;
 }
 
+.btn {
+  display: inline-block;
+  padding: 0.35rem 0.7rem;
+  margin-right: 0.35rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.btn-group .btn {
+  background: var(--primary-color);
+  color: white;
+}
+
+.btn-group .btn:hover {
+  text-decoration: none;
+  background: #0e7ec2;
+}
+
 body {
   font-family: "Segoe UI", Arial, sans-serif;
   color: #2b2b2b;
@@ -75,7 +93,7 @@ main {
 }
 
 section {
-  background-color: #fff;
+  background: #fff;
   padding: 2rem;
   border-radius: 0.5rem;
   margin-bottom: 1.5rem;
@@ -134,9 +152,52 @@ main section:nth-of-type(2) article p {
   color: var(--primary-color);
 }
 
+main section:nth-of-type(3) {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+main section:nth-of-type(3) article {
+  text-align: center;
+  background-color: #eef4fa;
+  padding: 1.2rem;
+  border-radius: 0.5rem;
+  transition: all 200ms ease-in-out;
+}
+
+main section:nth-of-type(3) article:hover {
+  background-color: #184879;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+main section:nth-of-type(3) article:hover p {
+  color: white;
+}
+
+main section:nth-of-type(3) article:hover h3 {
+  color: white;
+}
+
+main section:nth-of-type(3) h2 {
+  grid-column: 1 / -1;
+}
+
+main section:nth-of-type(3) article h3 {
+  font-size: 0.95rem;
+  color: #55677a;
+  margin-bottom: 0.5rem;
+}
+
+main section:nth-of-type(3) article p {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
 .refresh-btn {
   padding: .5rem 1rem;
-  margin-bottom: 1rem;
+  align-self: self-end;
   background: var(--primary-color);
   border: none;
   color: #fff;
@@ -240,6 +301,7 @@ form button[type="submit"]:hover {
   background-color: #164869;
 }
 
+
 /* Footer */
 footer {
   text-align: center;
@@ -252,7 +314,7 @@ footer {
   display: flex;
   align-items: center;
   gap: 1rem;
-  justify-content: end;
+  justify-content: space-between;
   margin-bottom: 1.5rem;
 }
 

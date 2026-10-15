@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PERKAPKOE | Ajukan Peminjaman</title>
+    <link rel="stylesheet" href="./../assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>PERKAPKOE</h1>
+        <button type="button" id="nav-toggle-btn" class="nav-toggle-label" aria-label="Menu">&#9776;</button>
+        <nav>
+            <ul>
+                <li><a href="./../index.html">Home</a></li>
+                <li><a href="./../inventaris/list-inventaris.html">Daftar inventaris</a></li>
+                <li><a href="./list-peminjaman.html">Ajukan Peminjaman</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Ajukan Peminjaman</h2>
+            <p>Form untuk mengajukan peminjaman..</p>
+        </section>
+        <section>
+            <form id="form-tambah">
+                <p>
+                    <label for="nama">Nama Peminjam</label><br>
+                    <input type="text" id="nama" name="nama" required>
+                </p>
+                <p>
+                    <label for="asal">Asal</label><br>
+                    <input type="text" id="asal" name="asal" required>
+                </p>
+                <p>
+                    <label for="no_hp">No. HP</label><br>
+                    <input type="text" id="no_hp" name="no_hp" required>
+                </p>
+                <p>
+                    <label for="tgl_kembali">Tanggal Kembali</label><br>
+                    <input type="date" id="tgl_kembali" name="tgl_kembali">
+                </p>
+                <p>
+                    <button type="submit">Simpan</button>
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SIMPUS-Mini &mdash; Jobsheet 1</p>
+    </footer>
+
+    <script src="./../assets/js/app.js"></script>
+</body>
+
+</html>
